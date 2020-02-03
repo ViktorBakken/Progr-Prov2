@@ -66,24 +66,24 @@ class Klasser
 
     public static void IsTrueString(string[] correct, string choice, string felMedelande)
     {
-        bool x = false;
-        while (x.Equals(true))
+        bool x = true;
+        while (x.Equals(true)) //Går tills spelaren skrivit rätt
         {
-            for (int i = 0; i < correct.Length; i++)
+            for (int i = 0; i < correct.Length; i++) //Kollar igenom alla rätta svar
             {
-                if (choice.ToLower().Trim() == correct[i])
+                if (choice.ToLower().Trim() == correct[i]) //Kollar igenom om spealrens svar passar med en av 
                 {
-                    x = true;
+                    x = false;
                     break;
                 }
             }
-            if (x == false)
+            if (x == true) //Spelaren har skrivit ett falskt svar
             {
                 Console.WriteLine(felMedelande);
 
                 choice = Console.ReadLine();
             }
         }
-    }
+    } //Failsaif, kollar om det spelaren svarat med är ett av de rätta alternativen
 }
 
